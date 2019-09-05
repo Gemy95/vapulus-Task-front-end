@@ -127,19 +127,25 @@ export class HomeComponent implements OnInit , AfterViewInit {
         this.searchArrayFromServer=[];
 
         this.searchTemp=dataObj.data;
+
       },
       (err)=>{/*console.log(err)*/}
       ,
        ()=>{
           this.ContactService.getContactsFromServer().subscribe((data)=>{
             this.searchArrayFromServer=data;
+            for(let i=0;i<this.searchArrayFromServer.length;i++)
+            {
+         this.searchArrayFromServer[i].image=`${environment.API_URL}uploads/`+this.searchArrayFromServer[i].image;
+             // console.log(this.arrayFromServer[i].image);
+            }
             this.searchTemp.push(...this.searchArrayFromServer);
             this.searchContacts= this.searchTemp.sort(this.compareByfirstName);
           },(err)=>{/*console.log(err)*/}
           ,()=>{
             this.searchContacts.filter((val) => {
               var fullName= val.firstName +" "+val.lastName;
-              if( fullName.toLowerCase().indexOf(this.searchValue.toString()) > -1)
+              if( fullName.indexOf(this.searchValue.toString()) > -1)
               this.searchContatsAfter.push(val);
              });
           }

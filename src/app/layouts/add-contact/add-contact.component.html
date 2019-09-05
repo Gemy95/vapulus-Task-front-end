@@ -74,7 +74,7 @@
 <input class="form-control" formControlName="email" type="text" placeholder="email address">
 <div class="alert alert-danger  animated shake" *ngIf="email.invalid && email.touched">
         <div *ngIf="email?.errors['required']"> please enter email </div>
-        <div *ngIf="email?.errors['pattern']"> email not valid </div>
+        <div *ngIf="email?.errors['pattern']"> email not valid try as example.example@example.com </div>
 </div>
 </div>
 

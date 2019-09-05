@@ -75,7 +75,7 @@ placeholder="&#xF002; Search Contacts" (change)="applyFilter()">
  {{ contactObj.firstName[0] | uppercase }}</div> 
  <br>
  <div class="imgDivClass">
-  <img src="../../../assets/ali.jpg" class="rounded-circle" style="width:90%" alt="no image"> 
+  <img src="{{contactObj.image}}" class="rounded-circle" style="width:90%" alt="no image"> 
 </div>
  <div class="fNameAndLClass"><p class="fullNameFont"> {{contactObj.firstName}}&nbsp;{{contactObj.lastName}}
   <br>
