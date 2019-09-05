@@ -1,0 +1,91 @@
+
+<div class="row"> 
+<span class="col-sm-3 animated flip" style="font-size: 2vw"> Add a New Contact </span>
+</div>
+
+<hr style="color: #A6DECB">
+
+<div class="card-body animated bounceInDown" style="animation-duration: 5s;">
+
+<form [formGroup]="addContactForm" (ngSubmit)="onSubmitAddContact();uploader.uploadAll()" >
+
+
+<div class="row">
+<div style="margin: 0 auto">
+<label>Upload image</label>
+<br>
+<input type="file" formControlName="image" #inputImage name="image" accept="image/*"
+ ng2FileSelect [uploader]="uploader" />
+</div>
+<br>
+</div>
+
+<br>
+
+<div class="form-label-group">
+<input class="form-control" formControlName="firstName" type="text" placeholder="firstName">
+<div class="alert alert-danger animated shake" *ngIf="firstName.invalid && firstName.touched">
+   <div *ngIf="firstName?.errors['required']"> please enter firstName </div>
+   <div *ngIf="firstName?.errors['minlength']"> 3 character minlength </div>
+   <div *ngIf="firstName?.errors['maxlength']"> 10 character maxlength </div>
+</div>
+</div>
+
+
+<br>
+
+
+<div class="form-label-group">
+<input class="form-control" formControlName="lastName" type="text" placeholder="lastName">
+<div class="alert alert-danger  animated shake" *ngIf="lastName.invalid && lastName.touched">
+        <div *ngIf="lastName?.errors['required']"> please enter lastName </div>
+        <div *ngIf="lastName?.errors['minlength']"> 3 character minlength </div>
+        <div *ngIf="lastName?.errors['maxlength']"> 10 character maxlength </div>
+</div>
+</div>
+
+
+<br>
+
+<div class="form-row">
+<div class="col-sm-2">
+<input type="text" class="form-control" formControlName="code" placeholder="code">
+<div class="alert alert-danger  animated shake" *ngIf="code.invalid && code.touched">
+        <div *ngIf="code?.errors['required']"> please enter code </div>
+        <div *ngIf="code?.errors['pattern']"> code from 2  to 4 digits plus + operator </div>
+</div>
+</div>
+
+
+<div class="col-sm-10">
+<input type="number" class="form-control" formControlName="mobileNumber" placeholder="enter mobileNumber">
+<div class="alert alert-danger  animated shake" *ngIf="mobileNumber.invalid && mobileNumber.touched">
+        <div *ngIf="mobileNumber?.errors['required']"> please enter mobileNumber </div>
+        <div *ngIf="mobileNumber?.errors['pattern']"> mobileNumber from 10 to 15 digits </div>
+</div>
+</div>
+</div>
+
+
+<br>
+
+
+<div class="form-label-group">
+<input class="form-control" formControlName="email" type="text" placeholder="email address">
+<div class="alert alert-danger  animated shake" *ngIf="email.invalid && email.touched">
+        <div *ngIf="email?.errors['required']"> please enter email </div>
+        <div *ngIf="email?.errors['pattern']"> email not valid </div>
+</div>
+</div>
+
+<br>
+
+<div class="d-flex flex-column align-items-center">
+ <input type="submit" [disabled]="!addContactForm.valid" class="btn btn-success col-sm-3 p-2"
+  value="Add Contact">
+ 
+<br>
+<input type="reset" class="btn btn-primary col-sm-3 p-2" value="Cancel" (click)="onResetContact()"> 
+</div>
+</form>
+</div>

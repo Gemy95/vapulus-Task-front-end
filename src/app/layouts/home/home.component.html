@@ -1,0 +1,96 @@
+<div class="row" > 
+<div class="col-sm-12" style="background-color: #D0CFD3;padding:5px"> 
+<input class="form-control placehodlerClass" [(ngModel)]="searchValue" type="text" 
+placeholder="&#xF002; Search Contacts" (change)="applyFilter()">   
+</div>
+</div>
+
+<div class="row">
+        <div class="col-11 headClass"> 
+        <span class="addNewClass animated flash" style="animation-duration:7s">Add New contacts</span>
+        </div>
+        <div class="col-1 addIconClass" > 
+         <a routerLink="/add-contact"> <i class="col-sm-1" class="fas fa-plus animated rotateIn"
+          style="animation-duration: 6s"></i> </a>
+       </div>
+       <div class="col-12 latestDivClass" >
+          <hr style="margin:0px">
+          <span style="font-size: 2vw">Latest Contacts</span>       
+       </div>
+</div>
+
+<br>
+
+
+
+<div class="row animated slideInUp" style="animation-duration: 3s" *ngIf="!chackSearchValue()"> 
+<div class="col-11" id="firstDiv" #firstDiv>
+<div class="contactArrayClass" *ngFor="let latestContact of customArrayOrderdByDate">
+    <div class="imgDivClass">
+        <img src="{{latestContact.image}}"  class="rounded-circle w-100" style="height: 70px;" alt="no image"> 
+    </div>
+    <div class="fNameAndLClass pl-2" >
+       <p class="fullNameFont"> {{latestContact.firstName}}&nbsp;{{latestContact.lastName}}
+        <br>
+        <span style="color: #BEBEBE">{{latestContact.email}}</span>  
+        </p>
+    </div>
+    <div class="lineClass"><br><hr> </div>
+</div> 
+<div class="contactArrayClass" *ngFor="let contactObj of contactsArray">
+<div class="firstCharClass" 
+*ngIf="isCurrentLetterChange(contactObj.firstName[0])" id="{{contactObj.firstName[0].toUpperCase()}}" 
+>{{ contactObj.firstName[0] | uppercase }}</div> 
+<br>
+<div class="imgDivClass">
+  <img src="{{contactObj.image}}" class="rounded-circle w-100" style="height: 70px;" alt="no image"> 
+</div>
+ <div class="fNameAndLClass pl-2">
+ <p class="fullNameFont"> {{contactObj.firstName}}&nbsp;{{contactObj.lastName}}
+  <br>
+  <span style="color: #BEBEBE">{{contactObj.email}}</span>  
+  </p>
+</div>
+<div class="lineClass"><br><hr> </div>
+</div>
+</div>
+<div class="col-1 justify-content-center align-items-center" id="secondDiv" #secondDiv>
+ <div class="d-flex flex-column" style="height: 100%;">
+  <p class="charWithId flex-fill" *ngFor="let char of letterArray">
+    <a href="#{{char}}">{{char}} </a> <br>
+  </p>
+ </div>
+</div>
+</div>
+
+
+
+
+<div class="row" *ngIf="chackSearchValue()"> 
+<div class="col-11" >
+<div class="contactArrayClass"
+ *ngFor="let contactObj of searchContatsAfter;let counter=index">
+ <div class="firstCharClass"
+ *ngIf="isSearchCurrentLetterChange(contactObj.firstName[0],counter)" id="{{contactObj.firstName[0].toUpperCase()}}">
+ {{ contactObj.firstName[0] | uppercase }}</div> 
+ <br>
+ <div class="imgDivClass">
+  <img src="../../../assets/ali.jpg" class="rounded-circle" style="width:90%" alt="no image"> 
+</div>
+ <div class="fNameAndLClass"><p class="fullNameFont"> {{contactObj.firstName}}&nbsp;{{contactObj.lastName}}
+  <br>
+  <span style="color: #BEBEBE">{{contactObj.email}}</span>  
+  </p>
+</div>
+<div class="lineClass"><br><hr> </div>
+</div>
+</div>
+<div class="col-1 justify-content-center align-items-center" id="secondDiv" #secondDiv>
+    <div class="d-flex flex-column" style="height: 100%;">
+     <p class="charWithId flex-fill" *ngFor="let char of letterArray">
+       <a href="#{{char}}">{{char}} </a> <br>
+     </p>
+    </div>
+   </div>
+</div>
+

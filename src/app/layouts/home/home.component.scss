@@ -1,0 +1,95 @@
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+ hr {
+   border: 0;
+   display:block;
+   width: 100%;               
+   background-color:black;
+   height: 1px;
+ }
+
+
+ .placehodlerClass
+ {
+   font-family:Arial, FontAwesome
+ }
+
+ .headClass
+ {
+   background-color: #F8F8F8;padding:5px
+ }
+
+ .addNewClass
+ {
+   padding: 5px;color: #626262;font-size: 2vw
+ }
+
+ .addIconClass
+ {
+   background-color: #F8F8F8;padding:5px;text-align:center
+ }
+
+ .latestDivClass
+ {
+   background-color: #F8F8F8;
+ }
+
+ .contactArrayClass
+ {
+   background-color: white;padding-top: 20px;width: 100%
+ }
+
+ .firstCharClass
+ {
+   background-color:#F8F8F8;width:100%;float: left;padding: 5px;margin-bottom: 5px;font-size: 1.5vw
+ }
+
+ .imgDivClass
+ {
+   background-color: white;width: 8%;float: left;
+ }
+ .fNameAndLClass
+ {
+   background-color:white;width: 92%;float: left;
+ }
+.lineClass
+{
+ width: 100%;float:left;
+}
+
+.charWithId{
+   text-align: center;font-size: 1.5vw
+}
+
+
+.containerDiv { 
+  position: relative;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.fullNameFont
+{
+  font-size: 1.5vw
+}
