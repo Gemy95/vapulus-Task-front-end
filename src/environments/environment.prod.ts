@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
-  firebase : {
-    apiKey: "AIzaSyCVkLveCGMczLSzdynO8GLklBE97Ez86eA",
-    authDomain: "vapulus-task.firebaseapp.com",
-    databaseURL: "https://vapulus-task.firebaseio.com",
-    projectId: "vapulus-task",
+  firebase :  {
+    apiKey: "AIzaSyBHcbw3d8yjo9eU6kzfBFqpUJv1IiClHjc",
+    authDomain: "vapulus-task-by-eng-ali-gamal.firebaseapp.com",
+    databaseURL: "https://vapulus-task-by-eng-ali-gamal.firebaseio.com",
+    projectId: "vapulus-task-by-eng-ali-gamal",
     storageBucket: "",
-    messagingSenderId: "678661932836",
-    appId: "1:678661932836:web:2ae66fc91fee4329e055b1"
+    messagingSenderId: "155231524012",
+    appId: "1:155231524012:web:f9ea812b5f5f121d78bb09"
   }
 };

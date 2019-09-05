@@ -70,14 +70,15 @@ placeholder="&#xF002; Search Contacts" (change)="applyFilter()">
 <div class="col-11" >
 <div class="contactArrayClass"
  *ngFor="let contactObj of searchContatsAfter;let counter=index">
- <div class="firstCharClass"
- *ngIf="isSearchCurrentLetterChange(contactObj.firstName[0],counter)" id="{{contactObj.firstName[0].toUpperCase()}}">
+ <div class="firstCharClass" *ngIf="isSearchCurrentLetterChange(contactObj.firstName[0],counter)"
+  id="{{contactObj.firstName[0].toUpperCase()}}">
  {{ contactObj.firstName[0] | uppercase }}</div> 
  <br>
  <div class="imgDivClass">
-  <img src="{{contactObj.image}}" class="rounded-circle" style="width:90%" alt="no image"> 
+  <img src="{{contactObj.image}}" class="rounded-circle w-100" style="height: 70px;" alt="no image"> 
 </div>
- <div class="fNameAndLClass"><p class="fullNameFont"> {{contactObj.firstName}}&nbsp;{{contactObj.lastName}}
+ <div class="fNameAndLClass pl-2">
+   <p class="fullNameFont"> {{contactObj.firstName}}&nbsp;{{contactObj.lastName}}
   <br>
   <span style="color: #BEBEBE">{{contactObj.email}}</span>  
   </p>
